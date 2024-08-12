@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Permian Alliance{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="products">
+        <div class="trailer-page">
+            <h1>Environmental Trailer</h1>
+            <section class="about">
+                <img
+                src="{{ url_for('static', filename='images/climate_trailer.jpg') }}"
+                alt="Exterior view of the enviromental trailer"
+                />
+                <div>
+                <h2>About Our Environmental Trailers</h2>
+                <p>
+                    Our environmental trailers are designed to provide a comfortable
+                    climate for workers in the oil and gas industry. The trailers are
+                    equipped with heating and cooling systems to ensure that workers are
+                    comfortable regardless of the weather conditions.
+                </p>
+                </div>
+            </section>
+            <section id="features">
+                <img
+                src="{{ url_for('static', filename='images/inside_climate.jpg') }}"
+                alt="Inside view of the enviromental trailer"
+                />
+                <div>
+                <h2>Features</h2>
+                <ul>
+                    <li>Heating and cooling systems</li>
+                    <li>Temperature-controlled environment</li>
+                    <li>Weather-resistant construction</li>
+                    <li>Compliance with industry regulations</li>
+                </ul>
+                </div>
+            </section>
+            <!--
+            <section id="gallery">
+                <h2>Gallery</h2>
+                <div class="image-container">
+                <img
+                    src="images/inside_shower.jpg"
+                    alt="Inside view of the emergency shower and eyewash trailer"
+                />
+                <img
+                    src="images/shower_trailer.jpg"
+                    alt="Exterior view of the emergency shower and eyewash trailer"
+                />
+                </div>
+            </section>-->
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>
+                    For more information or to rent an enviromental trailer,
+                    please contact us:
+                </p>
+                <ul>
+                    <li>Phone: (325) 305-9446</li>
+                    <li>
+                        Email: <a href="mailto:hryan@permianalliance.com">Permian Alliance</a>
+                    </li>
+                </ul>
+                <p>Or go to our contact page:</p>
+                <div class="contact"><a href="{{ url_for('contact') }}">CONTACT US</a></div>
+            </section>
+        </div>
+    </div>
+  {% endblock %}
+
+  {% block scripts %}
+    <script src="{{ url_for('static', filename='js/imageAppear.js') }}"></script>
+{% endblock %}

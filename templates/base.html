@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Permian Alliance rents and services safety shower trailers, office trailers and emergency shower trailers for the oil and gas industry in the Permian Basin.">
+            <meta name="Author" content="PathSix Web Design LLC">
+        <title>{% block title %}{% endblock %}</title> <!-- Title Variable -->
+        {% block styles %}{% endblock %} <!-- Stylesheet Variable -->
+        <!--Remember to put schema-->
+    </head>
+
+    <body>
+        <header>
+            <div class="top-bar">
+            <div class="container1">
+                <div class="contact-info">
+                <a href="tel:432-250-4778">432-250-4778</a>
+                </div>
+            </div>
+            </div>
+            <div class="nav-bar">
+            <nav class="container-top">
+                <ul>
+                <li><a href="{{ url_for('index') }}">HOME</a></li>
+                <li class="dropdown">
+                    <a href="#services">SERVICES<span class="dropdown-arrow">></span></a>
+                    <ul class="dropdown-content">
+                    <li>
+                        <a href="{{ url_for('shower') }}">Emergency Shower Trailer</a>
+                    </li>
+                    <li><a href="{{ url_for('environmental') }}">Environmental Trailer</a></li>
+                    <li><a href="{{ url_for('office') }}">Office Trailer</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('contact') }}">CONTACT</a></li>
+                </ul>
+            </nav>
+            </div>
+            <div class="logo">
+            <img src="{{ url_for('static', filename='images/permian_alliance_logo.png') }}" alt="Permian Alliance" />
+            </div>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+
+        <footer>
+            <div>
+              <p>&copy; 2024 Permian Alliance</p>
+              <br />
+              <p>1701 E County Rd 140</p>
+              <p>Midland, TX 79706</p>
+              <p>432-250-4778</p>
+            </div>
+          </footer>
+        {% block scripts %}{% endblock %} <!-- Scripts Variable -->
+    </body>
+</html>

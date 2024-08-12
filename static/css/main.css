@@ -1,0 +1,610 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header and Nav Styles */
+
+header .top-bar {
+  background-color: #3b061a;
+  padding: 10px;
+}
+
+header .nav-bar {
+  background-color: #333;
+  padding: 10px 0;
+  border-bottom: 1px solid black;
+}
+
+.logo {
+  width: 20%;
+  position: absolute;
+  top: 3%;
+  left: 5%;
+  z-index: 100;
+}
+
+.logo img {
+  width: 100%;
+  border: 1px solid black;
+}
+
+.container1 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container-top {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  justify-content: flex-end; /* Align items to the right */
+  flex-grow: 1; /* Allow the nav to take up available space */
+}
+
+.nav-bar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-bar li {
+  float: left;
+  margin: 0 40px;
+}
+
+.nav-bar li a {
+  display: block;
+  color: white;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.nav-bar li a:hover {
+  color: black;
+}
+
+.dropdown-arrow {
+  display: inline-block;
+  transform: rotate(90deg);
+  margin-left: 4px;
+  vertical-align: sub;
+  font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border: 1px solid black;
+}
+
+.dropdown-content li {
+  float: none;
+  width: 70%;
+}
+
+.dropdown-content li a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content li a:hover {
+  background-color: grey;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+/* Main Content Styles */
+
+main {
+  background: linear-gradient(to bottom, #3b061a 60%, black 100%);
+}
+
+.hero {
+  background: url("../images/hero2.jpg") no-repeat center center/cover;
+  height: 90vh;
+  position: relative;
+}
+
+.hero-content {
+  background-color: rgba(59, 6, 26, 0.96);
+  color: white;
+  padding: 20px;
+  position: absolute;
+  bottom: 25%;
+  left: 0;
+  text-align: center;
+  width: 30%;
+  height: 45%;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.hero-content a {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  border: 1px solid white;
+}
+
+.container {
+  display: flex;
+  text-align: center;
+  background-color: #3b061a;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.container h1 {
+  color: white;
+  font-size: 3em;
+  margin: 0;
+  width: 20%;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.container p {
+  color: white;
+  font-size: 1.5em;
+  margin: 20px;
+  width: 70%;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.trailer_section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0;
+}
+
+.trailers1,
+.trailers2,
+.trailers3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  width: 30%;
+  border: 3px solid black;
+  box-sizing: border-box;
+  flex-grow: 1;
+  border-radius: 10px;
+  background: #3b061a;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.trailers1.appear,
+.trailers2.appear,
+.trailers3.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.trailers1 div,
+.trailers2 div,
+.trailers3 div {
+  width: 100%;
+}
+
+.trailers1 img,
+.trailers2 img,
+.trailers3 img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.trailer-info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.trailer-info h2 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.trailer-info p {
+  font-size: 1.1em;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.learn-more {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  border: 1px solid white;
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+
+.learn-more:hover {
+  background-color: #555;
+}
+
+.about_us {
+  text-align: center;
+}
+
+.about_us h2 {
+  font-size: 2.2em;
+  color: white;
+  margin-top: 2em;
+}
+.about_us h3,
+.about_us h4 {
+  font-size: 1.6em;
+  color: white;
+}
+
+.about_main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: white;
+}
+
+.about_main p {
+  text-align: center;
+  margin: 1em auto;
+  width: 70%;
+  font-size: 1.3em;
+}
+
+.about_main img {
+  width: 25%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about_main ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 20px;
+  text-align: center;
+}
+
+.about_main ul li {
+  margin: 30px 30px;
+  font-size: 1.3em;
+}
+
+/* Trailer Pages Styles */
+
+.products {
+  background: linear-gradient(to bottom, black 0%, #3b061a 50%, black 100%);
+}
+
+.trailer-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: white;
+}
+
+.trailer-page h1 {
+  text-align: center;
+  margin: 1em 0;
+  font-size: 2.2em;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 1.6em;
+}
+
+.about p {
+  text-align: center;
+  margin: 1em auto;
+  width: 70%;
+  font-size: 1.3em;
+}
+
+.about,
+#features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.about img,
+#features img {
+  max-width: 45%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.about img.appear,
+#features img.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about div,
+#features div {
+  max-width: 50%;
+  padding-left: 20px;
+  flex: 1;
+}
+
+#contact {
+  margin: auto;
+  width: 40%;
+  font-size: 1.3em;
+}
+
+#features h2 {
+  text-align: center;
+  font-size: 1.6em;
+}
+
+#features ul {
+  font-size: 1.3em;
+  line-height: 1.5em;
+  padding: 0;
+}
+
+#contact h2 {
+  text-align: center;
+  font-size: 1.6em;
+  margin-top: 2em;
+}
+/*
+.image-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.image-container img {
+  max-width: 100%;
+  margin: 1em;
+  border: 1px solid #ddd;
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+*/
+.contact {
+  background-color: #3b061a;
+  color: white;
+  padding: 15px 40px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  border: 1px solid white;
+  width: 30%;
+  margin: auto;
+  font-size: 1em;
+  text-align: center;
+}
+
+#contact a {
+  color: white;
+}
+
+.contact a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact:hover {
+  background-color: #555;
+}
+
+/* Contact Form Styles */
+
+.contact-header {
+  text-align: center;
+  font-size: 2em;
+  padding-top: 4%;
+  margin: 0;
+  color: white;
+}
+
+/* Base styles for form elements, optimized for mobile */
+form label {
+  font-size: 1.2em;
+  font-weight: bold;
+  display: block;
+  padding: 10px 0;
+  color: white;
+}
+
+/* Inputs and Textarea - full width on mobile */
+form input[type="text"],
+form input[type="email"],
+form textarea,
+form input[type="submit"] {
+  width: 100%;
+  background-color: #fafafa;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+  padding: 10px;
+  font-size: 1.1em;
+  box-sizing: border-box; /* Ensure padding does not add to the width */
+}
+
+/* Adjust the height for textarea specifically */
+form textarea {
+  height: 150px;
+}
+
+/* Style for the submit button */
+form input#submit {
+  display: block;
+  width: 40%;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #000;
+  background-color: #f4f4f4;
+  background-image: linear-gradient(to bottom, #f4f4f4, #e5e5e5);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect for submit button */
+form input#submit:hover {
+  cursor: pointer;
+  border-color: #c1c1c1;
+  background-color: #dbdbdb;
+  background-image: linear-gradient(to bottom, #dbdbdb, #cccccc);
+}
+
+/* Flash message styling for better visibility on larger screens */
+.flash {
+  background-color: #fbb0b0;
+  padding: 10px;
+  max-width: 60%;
+  margin: 0 auto; /* Center the flash message */
+}
+
+/* Adjust form container for larger screens */
+.form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 60%;
+  padding: 0 10px;
+}
+
+/* Flash message and form container - full width 
+.flash,
+.form-container {
+  width: 100%;
+} */
+
+/* Ensure inputs and textarea fill their containers */
+input[type="text"],
+input[type="email"],
+textarea {
+  box-sizing: border-box;
+}
+
+/* Footer Styles */
+
+footer {
+  background-color: black;
+  color: white;
+  font-size: 1.2em;
+  padding: 20px;
+  margin: 0;
+  font-weight: bold;
+}
+
+footer p {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+
+@media (max-width: 768px) {
+  .about_main {
+    flex-direction: column;
+  }
+
+  .about_main img,
+  .about_main div {
+    max-width: 100%;
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  .trailer_section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trailers {
+    width: 90%;
+  }
+
+  .about,
+  #features {
+    flex-direction: column;
+  }
+
+  .about img,
+  #features img,
+  .about div,
+  #features div {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .about div,
+  #features div {
+    margin-top: 20px;
+  }
+
+  .flash,
+  .form-container {
+    width: 100%;
+  }
+}
