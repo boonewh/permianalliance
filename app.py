@@ -9,7 +9,8 @@ app.secret_key = 'secret'
 app.config['MAIL_SERVER'] = 'smtp.yourmailserver.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-
+app.config['MAIL_USERNAME'] = 'boonewh@notreal.com'
+app.config['MAIL_PASSWORD'] = 'password'
 
 mail = Mail(app)
 
@@ -35,7 +36,7 @@ def contact():
     if form.validate_on_submit():
         msg = Message(form.subject.data,
                       sender=form.email.data,
-                      recipients=['boonewh'])
+                      recipients=['boonewh@notreal.com'])
         msg.body = f"""
         This email was sent from the website contact form.
         From: {form.name.data} <{form.email.data}>
