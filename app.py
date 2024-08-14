@@ -38,6 +38,10 @@ def trash():
 def outfitting():
     return render_template('outfitting.html')
 
+@app.route('/pressure')
+def pressure():
+    return render_template('pressure.html')
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = ContactForm()

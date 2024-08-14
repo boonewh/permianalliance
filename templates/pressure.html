@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Permian Alliance{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="products">
+    <div class="trailer-page">
+        <h1>Pressure Washers</h1>
+        <section class="about">
+           <!--<img
+            src="{{ url_for('static', filename='images/pressure_washer.jpg') }}"
+            alt="Permian Alliance Pressure Washer"
+            />-->
+            <div>
+            <h2>About Our Pressure Washers</h2>
+            <p>
+                Our pressure washers are designed to provide a powerful and efficient
+                cleaning solution for any situation. The pressure washers
+                are equipped with high-pressure water jets to remove dirt, grime, and
+                other contaminants from equipment and surfaces.
+            </p>
+            </div>
+        </section>
+        <section id="features">
+            <div>
+            <h2>Features</h2>
+            <ul>
+                <li>Dual pressure washing guns</li>
+                <li>Diesel powered pump</li>
+                <li>350 gallon trailer-mounted tank</li>
+                <li>Durable, reliable construction</li>
+            </ul>
+            </div>
+        </section>
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>
+                    For more information or to rent a pressure washer,
+                    please contact us:
+                </p>
+                <ul>
+                    <li>Phone: (432) 250-4778</li>
+                    <li>
+                        Email: <a href="mailto:hryan@permianalliance.com">Permian Alliance</a>
+                    </li>
+                </ul>
+                <p>Or go to our contact page:</p>
+                <div class="contact"><a href="{{ url_for('contact') }}">CONTACT US</a></div>
+            </section>
+        </div>
+    </div>
+  {% endblock %}
+
+  {% block scripts %}
+    <script src="{{ url_for('static', filename='js/imageAppear.js') }}"></script>
+{% endblock %}
