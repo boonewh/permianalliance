@@ -463,7 +463,7 @@ main {
 .contact-header {
   text-align: center;
   font-size: 2em;
-  padding-top: 4%;
+  padding-top: 10%;
   margin: 0;
   color: white;
 }
@@ -565,15 +565,84 @@ footer p {
 }
 
 @media (max-width: 768px) {
+  .logo {
+    width: 40%;
+    top: 16%;
+    left: 0;
+    z-index: 1;
+  }
+
+  .nav-bar li {
+    margin: 0 15px;
+    z-index: 101;
+  }
+
+  .nav-bar li a {
+    font-size: 20px;
+  }
+
+  .hero-content {
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    clip-path: none;
+    border: none;
+    position: absolute;
+    text-align: center;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  .container {
+    display: block;
+
+    background-color: #3b061a;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  .container h1 {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .container p {
+    text-align: center;
+    margin: 20px;
+    width: 90%;
+  }
+
+  .trailers1,
+  .trailers2,
+  .trailers3 {
+    width: 90%;
+  }
+
+  #contact {
+    width: 90%;
+  }
+
+  .trailer-page {
+    padding: 220px 20px 20px 20px;
+  }
+
   .about_main {
     flex-direction: column;
   }
 
   .about_main img,
   .about_main div {
-    max-width: 100%;
-    padding: 0;
-    margin-top: 20px;
+    width: 100%;
+    font-size: 1.3em;
   }
 
   .trailer_section {
@@ -603,8 +672,100 @@ footer p {
     margin-top: 20px;
   }
 
+  .contact-header {
+    padding-top: 200px;
+  }
+
   .flash,
   .form-container {
     width: 100%;
+  }
+}
+
+@media (max-width: 410px) {
+  .nav-bar li {
+    margin: 0 10px;
+  }
+
+  .nav-bar li a {
+    font-size: 16px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .container h1 {
+    font-size: 2em;
+  }
+
+  .container p {
+    font-size: 1.2em;
+  }
+
+  .trailer-info h2 {
+    font-size: 1.2em;
+  }
+
+  .trailer-info p {
+    font-size: 1em;
+  }
+
+  .about_main h2 {
+    font-size: 1.8em;
+  }
+
+  .about_main h3,
+  .about_main h4 {
+    font-size: 1.4em;
+  }
+
+  .about_main p {
+    font-size: 1.1em;
+  }
+
+  .about_main ul li {
+    font-size: 1.1em;
+  }
+
+  .contact {
+    font-size: 0.9em;
+  }
+
+  .contact-info a {
+    font-size: 1em;
+  }
+
+  .contact-header {
+    font-size: 1.6em;
+    padding-top: 150px;
+  }
+
+  .about h2 {
+    font-size: 1.4em;
+  }
+
+  .about p {
+    font-size: 1.1em;
+  }
+
+  #features h2 {
+    font-size: 1.4em;
+  }
+
+  #features ul {
+    font-size: 1.1em;
+  }
+
+  #contact h2 {
+    font-size: 1.4em;
+  }
+
+  #contact {
+    font-size: 1.1em;
+  }
+
+  footer {
+    font-size: 1em;
   }
 }
