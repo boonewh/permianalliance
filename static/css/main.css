@@ -353,6 +353,7 @@ main {
 .about h2 {
   text-align: center;
   font-size: 1.6em;
+  margin-top: 3em;
 }
 
 .about p {
