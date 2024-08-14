@@ -340,7 +340,7 @@ main {
 .trailer-page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 60px 20px 20px 20px;
   color: white;
 }
 
@@ -388,6 +388,45 @@ main {
 
 .about div,
 #features div {
+  max-width: 50%;
+  padding-left: 20px;
+  flex: 1;
+}
+
+.outfit h2 {
+  text-align: center;
+  font-size: 1.6em;
+}
+
+.outfit p {
+  text-align: center;
+  margin: 1em auto;
+  width: 70%;
+  font-size: 1.3em;
+}
+
+.outfit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.outfit img {
+  max-width: 45%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.outfit img.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.outfit div {
   max-width: 50%;
   padding-left: 20px;
   flex: 1;

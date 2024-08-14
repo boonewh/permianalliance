@@ -22,13 +22,21 @@ def index():
 def shower():
     return render_template('shower.html') 
 
-@app.route('/environmental')
-def environmental():
-    return render_template('environmental.html') 
+@app.route('/climate')
+def climate():
+    return render_template('climate.html') 
 
 @app.route('/office')
 def office():
     return render_template('office.html') 
+
+@app.route('/trash')
+def trash():
+    return render_template('trash.html')
+
+@app.route('/outfitting')
+def outfitting():
+    return render_template('outfitting.html')
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():

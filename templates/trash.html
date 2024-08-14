@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Permian Alliance{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="products">
+    <div class="trailer-page">
+        <h1>Trash Trailer</h1>
+        <section class="about">
+            <img
+            src="{{ url_for('static', filename='images/trash_trailer.jpg') }}"
+            alt="Exterior view of the trash trailer"
+            />
+            <div>
+            <h2>About Our Trash Trailers</h2>
+            <p>
+                Our trash trailers are designed to provide a convenient and
+                efficient way to dispose of debris on job sites. These trailers
+                are essential for maintaining a clean and safe work environment
+                and comply with all industry regulations.
+            </p>
+            <p>
+                Comes standard with trash pull out.
+            </p>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>
+                For more information or to rent a trash trailer,
+                please contact us:
+            </p>
+            <ul>
+                <li>Phone: (432) 250-4778</li>
+                <li>
+                    Email: <a href="mailto:hryan@permianalliance.com">Permian Alliance</a>
+                </li>
+            </ul>
+            <p>Or go to our contact page:</p>
+            <div class="contact"><a href="{{ url_for('contact') }}">CONTACT US</a></div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/imageAppear.js') }}"></script>
+{% endblock %}

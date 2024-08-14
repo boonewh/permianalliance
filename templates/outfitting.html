@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}Permian Alliance{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="products">
+    <div class="trailer-page">
+        <h1>Custom Trailer Outfitting</h1>
+        <h1>Dog House Repair</h1>
+        <h1>General Maintenance</h1>
+        <section class="about">
+            <img
+            src="{{ url_for('static', filename='images/before.jpg') }}"
+            alt="Trailer before outfitting and installation"
+            />
+            <div>
+            <h2>Custom Trailer Outfitting</h2>
+            <p>
+                Permian Alliance offers custom outfitting services for trailers
+                to meet the specific needs of our customers. Our team of experts
+                will work with you to design and install the features you need
+                to make your trailer functional and efficient.
+            </p>
+            </div>
+        </section>
+        <section class="about">
+            <img
+            src="{{ url_for('static', filename='images/installing.jpg') }}"
+            alt="Installing a climate control system in a trailer"
+            />
+            <div>
+            <h2>Dog House Repair</h2>
+            <p>
+                Permian Alliance offers dog house repair services for trailers
+                to ensure that your equipment is in good working condition.
+                Our team of experts will inspect and repair your dog house to
+                ensure that it meets industry standards and regulations.
+            </p>
+            </div>
+        </section>
+        <section class="about">
+            <img
+            src="{{ url_for('static', filename='images/inside.jpg') }}"
+            alt="Inside view of the finished installation"
+            />
+            <div>
+            <h2>General Maintenance</h2>
+            <p>
+                Permian Alliance offers general maintenance services for trailers
+                to keep your equipment in great shape. Our team of experts
+                will inspect and maintain your trailer to ensure that it is safe and
+                efficient for your workers.
+            </p>
+            </div>
+        </section>
+      <!--  <section id="features">
+            <img
+            src="{{ url_for('static', filename='images/installing.jpg') }}"
+            alt="Installing a climate control system in a trailer"
+            />
+            <div>
+            <h2>Dog House Repair</h2>
+            <div>
+                <p>
+                    Permian Alliance offers dog house repair services for trailers
+                    to ensure that your equipment is in good working condition.
+                    Our team of experts will inspect and repair your dog house to
+                    ensure that it meets industry standards and regulations.
+                </p>
+            </div>
+        </section>
+        <section class="about">
+            <img 
+            src="images/inside.jpg"
+            alt="Inside view of the finished installation."/>
+            <h2>General Maintenance</h2>
+            <div>
+                <p>
+                    Permian Alliance offers general maintenance services for trailers
+                    to keep your equipment in great shape. Our team of experts
+                    will inspect and maintain your trailer to ensure that it is safe and
+                    efficient for your workers.
+                </p>
+            </div>
+        </section>-->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>
+                For more information or to schedule custom outfitting services,
+                please contact us:
+            </p>
+            <ul>
+                <li>Phone: (432) 250-4778</li>
+                <li>
+                    Email: <a href="mailto:hryan@permianalliance.com">Permian Alliance</a>
+                </li>
+            </ul>
+            <p>Or go to our contact page:</p>
+            <div class="contact"><a href="{{ url_for('contact') }}">CONTACT US</a></div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/imageAppear.js') }}"></script>
+{% endblock %}
