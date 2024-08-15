@@ -565,6 +565,15 @@ footer p {
   margin-right: 5%;
 }
 
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.advert {
+  font-size: 0.8em;
+}
+
 @media (max-width: 768px) {
   .logo {
     width: 40%;
