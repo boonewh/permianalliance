@@ -59,8 +59,8 @@ def contact():
         """
         mail.send(msg)
         flash('Thank you for your message. We\'ll get back to you shortly.', 'success')
-        return redirect(url_for('contact'))
-    return render_template('contact.html', form=form)
+        return redirect(url_for('contact', success=True))
+    return render_template('contact.html', form=form, success=request.args.get('success', False))
 
 if __name__ == '__main__':
     app.run(debug=True)
