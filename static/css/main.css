@@ -517,9 +517,9 @@ form input#submit:hover {
   background-image: linear-gradient(to bottom, #dbdbdb, #cccccc);
 }
 
-/* Flash message styling for better visibility on larger screens */
 .flash {
-  background-color: #fbb0b0;
+  color: white;
+  font-size: 1.5em;
   padding: 10px;
   max-width: 60%;
   margin: 0 auto; /* Center the flash message */
