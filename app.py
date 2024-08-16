@@ -3,14 +3,14 @@ from forms import ContactForm
 from flask_mail import Mail, Message
 
 app = Flask(__name__)
-app.secret_key = 'secret'
+app.secret_key = os.environ.get('SECRET_KEY', 'default_secret')
 
-# Configure Flask-Mail
-app.config['MAIL_SERVER'] = 'smtp.yourmailserver.com'
+# Configure Flask-Mail for Gmail
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'boonewh@notreal.com'
-app.config['MAIL_PASSWORD'] = 'password'
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')  # Your Gmail address
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')  # Your Gmail app password
 
 mail = Mail(app)
 
