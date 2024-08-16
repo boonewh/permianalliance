@@ -49,7 +49,7 @@ def contact():
     if form.validate_on_submit():
         msg = Message(form.subject.data,
                       sender=form.email.data,
-                      recipients=['boonewh@notreal.com'])
+                      recipients=['boonewh@gmail.com'])
         msg.body = f"""
         This email was sent from the website contact form.
         From: {form.name.data} <{form.email.data}>
