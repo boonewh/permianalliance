@@ -51,7 +51,7 @@ def contact():
                       sender=form.email.data,
                       recipients=['boonewh@gmail.com'])
         msg.body = f"""
-        This email was sent from the website contact form.
+        This email was sent from the Permian Alliance website contact form.
         From: {form.name.data} <{form.email.data}>
         Subject: {form.subject.data}
 
