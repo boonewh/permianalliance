@@ -8,9 +8,15 @@
 
 {% block content %}
 <h1 class="contact-header">Contact Us</h1>
-{% if success %}
-<p>Thank you for your message. We'll get back to you shortly.</p>
-{% else %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+{% if not success %}
 {% for message in form.name.errors %}
   <div class="flash">{{ message }}</div>
 {% endfor %}
