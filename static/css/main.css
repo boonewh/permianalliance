@@ -522,7 +522,7 @@ form input#submit:hover {
   font-size: 1.5em;
   padding: 10px;
   max-width: 60%;
-  margin: 0 auto; /* Center the flash message */
+  margin: 0 auto;
 }
 
 /* Adjust form container for larger screens */
@@ -534,12 +534,6 @@ form input#submit:hover {
   width: 60%;
   padding: 0 10px;
 }
-
-/* Flash message and form container - full width 
-.flash,
-.form-container {
-  width: 100%;
-} */
 
 /* Ensure inputs and textarea fill their containers */
 input[type="text"],

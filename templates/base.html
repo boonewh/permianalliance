@@ -4,10 +4,74 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Permian Alliance rents and services safety shower trailers, office trailers and emergency shower trailers for the oil and gas industry in the Permian Basin.">
-            <meta name="Author" content="PathSix Web Design LLC">
+        <meta name="Author" content="PathSix Web Design LLC">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+        <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+
         <title>{% block title %}{% endblock %}</title> <!-- Title Variable -->
         {% block styles %}{% endblock %} <!-- Stylesheet Variable -->
-        <!--Remember to put schema-->
+        
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Permian Alliance",
+              "image": "https://permianalliance.com/static/images/permian_alliance_logo.png",
+              "description": "Permian Alliance rents and services safety shower trailers, office trailers, and emergency shower trailers for the oil and gas industry in the Permian Basin.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "1701 E County Rd 140",
+                "addressLocality": "Midland",
+                "addressRegion": "TX",
+                "postalCode": "79706",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "31.9974",
+                "longitude": "-102.0779"
+              },
+              "telephone": "+1-432-250-4778",
+              "email": "hryan@permianalliance.com",
+              "priceRange": "Varies per job",
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+                  ],
+                  "opens": "00:00",
+                  "closes": "23:59"
+                }
+              ],
+              "areaServed": [
+                {
+                  "@type": "Place",
+                  "name": "Midland, TX"
+                },
+                {
+                  "@type": "Place",
+                  "name": "Odessa, TX"
+                }
+              ],
+              "url": "https://permianalliance.com",
+              "logo": "https://permianalliance.com/static/images/permian_alliance_logo.png",
+              "owner": {
+                "@type": "Person",
+                "name": "Hayden Ryan"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-432-250-4778",
+                "contactType": "Customer Service",
+                "areaServed": "US",
+                "availableLanguage": "English"
+              }
+            }
+            </script>
     </head>
 
     <body>
