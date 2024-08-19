@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory
 from forms import ContactForm
 from flask_mail import Mail, Message
 
@@ -61,6 +61,10 @@ def contact():
         flash('Thank you for your message. We\'ll get back to you shortly.', 'success')
         return redirect(url_for('contact', success=True))
     return render_template('contact.html', form=form, success=request.args.get('success', False))
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('.', 'sitemap.xml')
 
 if __name__ == '__main__':
     app.run(debug=True)
