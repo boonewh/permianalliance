@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Permian Alliance | 432-250-4778 - Contact Us{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<body>
+    <h1>This Page Has Moved</h1>
+    <p>Our contact information has been updated. Please visit our <a href="{{ url_for('contact') }}">new contact page</a> for the latest details.</p>
+</body>
+{% endblock %}
