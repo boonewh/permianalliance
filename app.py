@@ -66,5 +66,9 @@ def contact():
 def sitemap():
     return send_from_directory('.', 'sitemap.xml')
 
+@app.route('/ContactUs')
+def redirect_to_contact():
+    return redirect(url_for('contact'))
+
 if __name__ == '__main__':
     app.run(debug=True)
