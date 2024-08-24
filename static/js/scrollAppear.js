@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const trailers1 = document.querySelector(".trailers1");
-  const trailers2 = document.querySelector(".trailers2");
-  const trailers3 = document.querySelector(".trailers3");
+  const trailers1 = document.querySelectorAll(".trailers1");
+  const trailers2 = document.querySelectorAll(".trailers2");
+  const trailers3 = document.querySelectorAll(".trailers3");
 
   const options = {
     root: null,
@@ -15,14 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
         entry.target.classList.add("appear");
         observer.unobserve(entry.target);
 
-        // Delay the appearance of the next trailers
-        if (entry.target === trailers1) {
-          setTimeout(() => trailers2.classList.add("appear"), 1000);
-          setTimeout(() => trailers3.classList.add("appear"), 2000);
+        // Find index of the intersecting element to delay subsequent ones accordingly
+        const index = [...trailers1].indexOf(entry.target);
+        if (index !== -1) {
+          setTimeout(() => trailers2[index].classList.add("appear"), 1000);
+          setTimeout(() => trailers3[index].classList.add("appear"), 2000);
         }
       }
     });
   }, options);
 
-  observer.observe(trailers1);
+  trailers1.forEach((trailer) => observer.observe(trailer));
 });

@@ -18,17 +18,16 @@
     <section class="container">
         <h1>Permian Alliance</h1>
         <p>
-          Permian Alliance is a company that provides on-location safety shower and
-          climate trailers for the oil and gas industry. Our trailers are equipped
-          with the latest safety features and are designed to withstand the harsh
-          conditions of the Permian Basin.
+          Permian Alliance is a company that provides on-location trailers and repair services
+          for the oil and gas industry. Our trailers are equipped with the latest safety features 
+          and are designed to withstand the harsh conditions of the Permian Basin.
         </p>
       </section>
 
     <section class="trailer_section">
         <div class="trailers1">
             <div>
-                <img src="{{ url_for('static', filename='images/shower_trailer.jpg') }}" alt="Emergency Shower trailer" />
+                <img src="{{ url_for('static', filename='images/shower_trailer.jpg') }}" alt="Emergency Shower trailer for rent" />
             </div>
             <div class="trailer-info">
                 <h2>Emergency Shower Trailer</h2>
@@ -42,9 +41,9 @@
             </div>
         </div>
         <div class="trailers2">
-        <div>
-            <img src="{{ url_for('static', filename='images/climate_trailer.jpg') }}" alt="Climate Control Trailer" />
-        </div>
+            <div>
+                <img src="{{ url_for('static', filename='images/climate_trailer.jpg') }}" alt="Climate Control Trailer for rent" />
+            </div>
             <div class="trailer-info">
                 <h2>Climate Control Trailer</h2>
                 <p>
@@ -57,9 +56,9 @@
             </div>
         </div>
         <div class="trailers3">
-        <div>
-            <img src="{{ url_for('static', filename='images/office_trailer.jpg') }}" alt="Portable Office Trailer" />
-        </div>
+            <div>
+                <img src="{{ url_for('static', filename='images/office_trailer.jpg') }}" alt="Portable Office Trailer for rent" />
+            </div>
             <div class="trailer-info">
                 <h2>Office Trailer</h2>
                 <p>
@@ -67,6 +66,44 @@
                 professional environment for workers in the oil and gas industry. The
                 trailers are equipped with all the amenities needed to conduct
                 business on-site.
+                </p>
+                <a href="{{ url_for('office') }}" class="learn-more">LEARN MORE</a>
+            </div>
+        </div>
+        <div class="trailers1">
+            <div>
+                <img src="{{ url_for('static', filename='images/installing2.jpg') }}" alt="Outfitting and Repair services" />
+            </div>
+            <div class="trailer-info">
+                <h2>Custom Trailer Outfitting and Repair</h2>
+                <p>
+                Our team of experts can outfit and repair trailers to meet your 
+                specific needs. Our team has over 19 years of experience in the 
+                HSC field and can provide 24 hour service 365 days a year.
+                </p>
+                <a href="{{ url_for('outfitting') }}" class="learn-more">LEARN MORE</a>
+            </div>
+        </div>
+        <div class="trailers2">
+            <div>
+                <img src="{{ url_for('static', filename='images/pressure_washer.jpg') }}" alt="Pressure washer for rent" />
+            </div>
+            <div class="trailer-info">
+                <h2>Pressure Washers</h2>
+                <p>
+                Our pressure washers are designed to provide a safe and efficient way to clean equipment on-site. The pressure washers are equipped with the latest safety features and are designed to withstand the harsh conditions of the Permian Basin.
+                </p>
+                <a href="{{ url_for('pressure') }}" class="learn-more">LEARN MORE</a>
+            </div>
+        </div>
+        <div class="trailers3">
+            <div>
+                <img src="{{ url_for('static', filename='images/trash_trailer2.jpg') }}" alt="Portable trash trailer for rent" />
+            </div>
+            <div class="trailer-info">
+                <h2>Office Trailer</h2>
+                <p>
+                Our trash trailers are designed to provide a safe and efficient way to dispose of waste on-site. The trailers are equipped with the latest safety features and are designed to withstand the harsh conditions of the Permian Basin.
                 </p>
                 <a href="{{ url_for('office') }}" class="learn-more">LEARN MORE</a>
             </div>
