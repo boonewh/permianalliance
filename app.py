@@ -61,7 +61,7 @@ def contact():
         mail.send(msg)
         flash('Thank you for your message. We\'ll get back to you shortly.', 'success')
         return redirect(url_for('contact', success=True))
-    return render_template('contact.html', form=form, success=request.args.get('success', False))
+    return render_template('contact.html', form=form, success=request.args.get('success', False), google_maps_api_key=google_maps_api_key)
 
 @app.route('/sitemap.xml')
 def sitemap():
