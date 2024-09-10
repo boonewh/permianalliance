@@ -542,6 +542,35 @@ textarea {
   box-sizing: border-box;
 }
 
+/* Location Styles */
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  padding-bottom: 50px;
+  color: white;
+}
+
+.location-headers h1,
+.location-headers h2 {
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  color: white;
+}
+
+.location p {
+  font-size: 2em;
+  margin: 0 0 0 30px;
+  padding: 0;
+}
+
+.maplink {
+  width: 500px;
+  height: auto;
+}
+
 /* Footer Styles */
 
 footer {
@@ -683,6 +712,27 @@ footer a {
   .flash,
   .form-container {
     width: 100%;
+  }
+
+  /* Location Styles */
+
+  .location {
+    display: block;
+    margin-bottom: 50px;
+  }
+
+  .location img {
+    width: 100%;
+  }
+
+  .location p {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .maplink {
+    width: 90%;
+    border: 1px solid #ccc;
   }
 }
 
