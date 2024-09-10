@@ -46,6 +46,7 @@ def pressure():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = ContactForm()
+    google_maps_api_key = os.getenv('GOOGLE_MAPS_API_KEY') # Get your API key from https://console.developers.google.com
     if form.validate_on_submit():
         msg = Message(form.subject.data,
                       sender=form.email.data,
