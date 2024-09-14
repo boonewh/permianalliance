@@ -11,5 +11,5 @@ class ContactForm(FlaskForm):
     name = StringField("Name", validators=[DataRequired(message="Please enter your name.")])
     email = StringField("Email", validators=[DataRequired(message="Please enter your email address"), Email(), validate_email])
     subject = StringField("Subject", validators=[DataRequired(message="Please enter a subject.")])
-    message = TextAreaField("Message.", validators=[DataRequired(message="Please enter a message.")])
+    message = TextAreaField("Message", validators=[DataRequired(message="Please enter a message.")])
     submit = SubmitField("Send")
