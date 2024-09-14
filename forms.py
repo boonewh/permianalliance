@@ -10,6 +10,6 @@ def validate_email(form, field):
 class ContactForm(FlaskForm):
     name = StringField("Name", validators=[DataRequired(message="Please enter your name.")])
     email = StringField("Email", validators=[DataRequired(message="Please enter your email address"), Email(), validate_email])
-    subject = StringField("What is your current website? (ex: www.name.com or 'none' is also fine.)", validators=[DataRequired(message="Please enter a site or none.")])
-    message = TextAreaField("Briefly describe what you need in your new website. 'Not sure' is a valid response.", validators=[DataRequired(message="Please enter a message. I don't know or I want to talk about it are good responses.")])
+    subject = StringField("Subject)", validators=[DataRequired(message="Please enter a subject.")])
+    message = TextAreaField("Message.", validators=[DataRequired(message="Please enter a message.")])
     submit = SubmitField("Send")
