@@ -3,8 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Permian Alliance rents, repairs and services emergency shower trailers, climate control trailers and office trailers for the oil and gas industry in the Permian Basin.">
-        <meta name="Author" content="PathSix Web Design LLC">
+        {% block meta %}{% endblock %} <!-- Meta Variable -->
 
         <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
         <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
