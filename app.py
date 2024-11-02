@@ -50,22 +50,35 @@ def pressure():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = ContactForm()
-    google_maps_api_key = os.getenv('GOOGLE_MAPS_API_KEY') # Get your API key from https://console.developers.google.com
+    google_maps_api_key = os.getenv('GOOGLE_MAPS_API_KEY')  # Get your API key from environment variable
+    
     if form.validate_on_submit():
-        msg = Message(form.subject.data,
-                      sender=form.email.data,
-                      recipients=['hryan@permianalliance.com'])
-        msg.body = f"""
-        This email was sent from the Permian Alliance website contact form.
-        From: {form.name.data} <{form.email.data}>
-        Subject: {form.subject.data}
+        app.logger.info("Form validated successfully.")  # Log successful validation
+        try:
+            msg = Message(form.subject.data,
+                          sender=form.email.data,
+                          recipients=['hryan@permianalliance.com'])
+            msg.body = f"""
+            This email was sent from the Permian Alliance website contact form.
+            From: {form.name.data} <{form.email.data}>
+            Subject: {form.subject.data}
 
-        {form.message.data}
-        """
-        mail.send(msg)
-        flash('Thank you for your message. We\'ll get back to you shortly.', 'success')
-        return redirect(url_for('contact', success=True))
-    return render_template('contact.html', form=form, success=request.args.get('success', False), google_maps_api_key=google_maps_api_key)
+            {form.message.data}
+            """
+            mail.send(msg)
+            app.logger.info("Email sent successfully.")  # Log email send success
+            flash("Thank you for your message. We'll get back to you shortly.", "success")
+            return redirect(url_for('contact', success=True))
+        except Exception as e:
+            app.logger.error("Error sending email: %s", e)  # Log any email errors
+            flash("An error occurred while sending your message. Please try again later.", "danger")
+    else:
+        app.logger.warning("Form validation failed: %s", form.errors)  # Log validation errors
+        if form.recaptcha.errors:
+            app.logger.warning("reCAPTCHA validation errors: %s", form.recaptcha.errors)  # Log reCAPTCHA-specific errors
+
+    return render_template('contact.html', form=form, success=request.args.get('success') == 'True', google_maps_api_key=google_maps_api_key)
+
 
 @app.route('/sitemap.xml')
 def sitemap():
