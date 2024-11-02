@@ -14,7 +14,7 @@ app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')  # Your Gmail addr
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')  # Your Gmail app password
 
 # Configure reCAPTCHA
-app.config['RECAPTCHA_SITE_KEY'] = os.environ.get('RECAPTCHA_SITE_KEY')
+app.config['RECAPTCHA_PUBLIC_KEY'] = os.environ.get('RECAPTCHA_PUBLIC_KEY')
 app.config['RECAPTCHA_SECRET_KEY'] = os.environ.get('RECAPTCHA_SECRET_KEY')
 RECAPTCHA_USE_SSL = False
 RECAPTCHA_OPTIONS = {'theme': 'light'}
