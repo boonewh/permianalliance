@@ -13,6 +13,12 @@ app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')  # Your Gmail address
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')  # Your Gmail app password
 
+# Configure reCAPTCHA
+app.config['RECAPTCHA_SITE_KEY'] = os.environ.get('RECAPTCHA_SITE_KEY')
+app.config['RECAPTCHA_SECRET_KEY'] = os.environ.get('RECAPTCHA_SECRET_KEY')
+RECAPTCHA_USE_SSL = False
+RECAPTCHA_OPTIONS = {'theme': 'light'}
+
 mail = Mail(app)
 
 @app.route('/')
