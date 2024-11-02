@@ -15,9 +15,7 @@ app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')  # Your Gmail app 
 
 # Configure reCAPTCHA
 app.config['RECAPTCHA_PUBLIC_KEY'] = os.environ.get('RECAPTCHA_PUBLIC_KEY')
-app.config['RECAPTCHA_SECRET_KEY'] = os.environ.get('RECAPTCHA_SECRET_KEY')
-RECAPTCHA_USE_SSL = False
-RECAPTCHA_OPTIONS = {'theme': 'light'}
+app.config['RECAPTCHA_PRIVATE_KEY'] = os.environ.get('RECAPTCHA_PRIVATE_KEY')
 
 mail = Mail(app)
 
@@ -56,7 +54,7 @@ def contact():
     if form.validate_on_submit():
         msg = Message(form.subject.data,
                       sender=form.email.data,
-                      recipients=['boonewh@gmail.com'])
+                      recipients=['hryan@permianalliance.com'])
         msg.body = f"""
         This email was sent from the Permian Alliance website contact form.
         From: {form.name.data} <{form.email.data}>
