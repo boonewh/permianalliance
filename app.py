@@ -6,12 +6,12 @@ from flask_mail import Mail, Message
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'default_secret')
 
-# Configure Flask-Mail for Gmail
-MAIL_SERVER = 'mail.gandi.net'
-MAIL_PORT = 465
-MAIL_USE_SSL = True
-app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')  # Your Gmail address
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')  # Your Gmail app password
+# Configure Flask-Mail
+app.config['MAIL_SERVER'] = 'mail.gandi.net'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')  
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD') 
 
 # Configure reCAPTCHA
 app.config['RECAPTCHA_PUBLIC_KEY'] = os.environ.get('RECAPTCHA_PUBLIC_KEY')
