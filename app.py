@@ -8,7 +8,8 @@ app.secret_key = os.environ.get('SECRET_KEY', 'default_secret')
 
 # Configure Flask-Mail
 app.config['MAIL_SERVER'] = 'mail.gandi.net'
-app.config['MAIL_PORT'] = 465
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_SSL'] = False
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')  
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD') 
@@ -55,9 +56,12 @@ def contact():
     if form.validate_on_submit():
         app.logger.info("Form validated successfully.")  # Log successful validation
         try:
-            msg = Message(form.subject.data,
-                          sender=form.email.data,
-                          recipients=['hryan@permianalliance.com'])
+            msg = Message(
+                subject=form.subject.data,
+                sender=app.config['MAIL_USERNAME'],  # verified sender
+                recipients=['hryan@permianalliance.com'],
+                reply_to=form.email.data
+            )
             msg.body = f"""
             This email was sent from the Permian Alliance website contact form.
             From: {form.name.data} <{form.email.data}>
