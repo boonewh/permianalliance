@@ -76,6 +76,7 @@ def contact():
         except Exception as e:
             app.logger.error("Error sending email: %s", e)  # Log any email errors
             flash("An error occurred while sending your message. Please try again later.", "danger")
+            flash(f"Error: {str(e)}", "danger")
     else:
         app.logger.warning("Form validation failed: %s", form.errors)  # Log validation errors
         if form.recaptcha.errors:
