@@ -71,6 +71,283 @@
         }
       }
       </script>
+
+      <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+        }
+        
+        .demo-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .demo-header {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .demo-text {
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* FLOATING ACTION BUTTON STYLES */
+        .bison-fab-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Floating button container with text */
+        .bison-fab-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        /* Text above and below button */
+        .bison-fab-text {
+            color: #333;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2px 8px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            white-space: nowrap;
+        }
+        
+        .bison-fab-text.above {
+            margin-bottom: 2px;
+        }
+        
+        .bison-fab-text.below {
+            margin-top: 2px;
+            color: #8B4513;
+            font-weight: 700;
+        }
+
+        /* Main floating button */
+        .bison-fab {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 18px 24px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(139, 69, 19, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            min-width: 180px;
+            justify-content: center;
+        }
+        
+        .bison-fab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(139, 69, 19, 0.4);
+            background: linear-gradient(135deg, #A0522D 0%, #F4A460 100%);
+        }
+        
+        .bison-fab:active {
+            transform: translateY(0);
+        }
+        
+        .bison-fab:hover .bison-fab-text {
+            transform: translateY(-1px);
+        }
+        
+        /* Bison logo */
+        .bison-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 3px;
+            object-fit: contain;
+            background: white;
+            padding: 2px;
+        }
+        
+        /* Expandable menu */
+        .bison-menu {
+            position: absolute;
+            bottom: 120px;
+            right: 0;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            padding: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.9);
+            transition: all 0.3s ease;
+            min-width: 280px;
+            border: 2px solid #8B4513;
+        }
+        
+        .bison-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        
+        .bison-menu-header {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .bison-menu-content {
+            padding: 20px;
+        }
+        
+        .bison-menu-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .bison-menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .bison-menu-item:hover {
+            color: #8B4513;
+        }
+        
+        .bison-menu-item .icon {
+            width: 24px;
+            height: 24px;
+            background: #8B4513;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        
+        .bison-menu-item .text {
+            flex: 1;
+        }
+        
+        .bison-menu-item .main-text {
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        
+        .bison-menu-item .sub-text {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .bison-cta-button {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+        
+        .bison-cta-button:hover {
+            background: linear-gradient(135deg, #A0522D 0%, #F4A460 100%);
+            transform: translateY(-1px);
+        }
+        
+        /* Close button */
+        .bison-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+        
+        .bison-close:hover {
+            opacity: 1;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            .bison-fab-container {
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .bison-fab {
+                padding: 15px 18px;
+                font-size: 13px;
+                min-width: 160px;
+            }
+            
+            .bison-fab-text {
+                font-size: 9px;
+                padding: 2px 6px;
+            }
+            
+            .bison-menu {
+                min-width: 260px;
+                right: -10px;
+            }
+            
+            .bison-menu-content {
+                padding: 15px;
+            }
+        }
+        
+        /* Pulse animation for attention */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .bison-fab.pulse {
+            animation: pulse 2s infinite;
+        }
+      </style>
     </head>
 
     <body>
@@ -111,6 +388,115 @@
         <main>
             {% block content %}{% endblock %}
         </main>
+
+        <!-- BISON COOLERS FLOATING ACTION BUTTON -->
+        <div class="bison-fab-container">
+            <div class="bison-fab-wrapper">
+                <div class="bison-fab-text above">Official Dealer of</div>
+                <button class="bison-fab" id="bisonFab">
+                    <img src="{{ url_for('static', filename='images/bison_logo.jpg') }}" alt="Bison Coolers" class="bison-icon">
+                    <span>Bison Coolers</span>
+                </button>
+                <div class="bison-fab-text below">Order Yours Today!</div>
+            </div>
+            
+            <div class="bison-menu" id="bisonMenu">
+                <div class="bison-menu-header">
+                    <button class="bison-close" id="bisonClose">&times;</button>
+                    Bison Coolers Available
+                </div>
+                <div class="bison-menu-content">
+                    <a href="tel:432-250-4778" class="bison-menu-item">
+                        <div class="icon">📞</div>
+                        <div class="text">
+                            <div class="main-text">Call to Order</div>
+                            <div class="sub-text">(432) 250-4778</div>
+                        </div>
+                    </a>
+                    
+                    <a href="/contact" class="bison-menu-item">
+                        <div class="icon">📧</div>
+                        <div class="text">
+                            <div class="main-text">Contact for Pricing</div>
+                            <div class="sub-text">Get a custom quote</div>
+                        </div>
+                    </a>
+                    
+                    <div class="bison-menu-item">
+                        <div class="icon">🚚</div>
+                        <div class="text">
+                            <div class="main-text">Shipped Next Day</div>
+                            <div class="sub-text">Fast shipping available</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bison-menu-item">
+                        <div class="icon">🇺🇸</div>
+                        <div class="text">
+                            <div class="main-text">USA Made Quality</div>
+                            <div class="sub-text">Lifetime warranty included</div>
+                        </div>
+                    </div>
+                    
+                    <button class="bison-cta-button" onclick="window.location.href='tel:432-250-4778'">
+                        Call Now: (432) 250-4778
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Floating Action Button functionality
+            const fab = document.getElementById('bisonFab');
+            const menu = document.getElementById('bisonMenu');
+            const closeBtn = document.getElementById('bisonClose');
+            let isMenuOpen = false;
+
+            // Toggle menu on FAB click
+            fab.addEventListener('click', function() {
+                isMenuOpen = !isMenuOpen;
+                menu.classList.toggle('active', isMenuOpen);
+                
+                // Remove pulse animation when clicked
+                fab.classList.remove('pulse');
+            });
+
+            // Close menu when close button is clicked
+            closeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                isMenuOpen = false;
+                menu.classList.remove('active');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!fab.contains(e.target) && !menu.contains(e.target)) {
+                    isMenuOpen = false;
+                    menu.classList.remove('active');
+                }
+            });
+
+            // Optional: Add pulse animation on page load to draw attention
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    fab.classList.add('pulse');
+                }, 2000); // Start pulsing after 2 seconds
+            });
+
+            // Track clicks for analytics (optional)
+            fab.addEventListener('click', function() {
+                // You can add Google Analytics or other tracking here
+                console.log('Bison Coolers FAB clicked');
+            });
+
+            // Track phone calls (optional)
+            document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    console.log('Phone call initiated from Bison Coolers menu');
+                    // Add analytics tracking here
+                });
+            });
+        </script>
 
         <footer>
             <div>
