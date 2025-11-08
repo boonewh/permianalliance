@@ -76,9 +76,16 @@ header .nav-bar {
 .dropdown-arrow {
   display: inline-block;
   transform: rotate(90deg);
-  margin-left: 4px;
-  vertical-align: sub;
-  font-weight: bold;
+  margin-left: 6px;
+  vertical-align: middle;
+  font-weight: normal;
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when hovering */
+.dropdown:hover .dropdown-arrow {
+  transform: rotate(270deg);
 }
 
 .dropdown {
@@ -89,31 +96,64 @@ header .nav-bar {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #333;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: #2a2a2a;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
   z-index: 1;
-  border: 1px solid black;
+  border: none;
+  border-top: 3px solid #3b061a;
+  min-width: 280px; /* Increase width to accommodate longer text */
+  width: max-content; /* Allow it to size based on content */
+  max-width: 350px; /* Set a reasonable max */
+  top: 100%;
+  left: 0;
+  border-radius: 0 0 5px 5px;
+  padding: 10px 0;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
+/* Update the li width */
 .dropdown-content li {
   float: none;
-  width: 70%;
+  width: 100%;
+  padding: 0;
 }
 
+/* Adjust the link padding for better fit */
 .dropdown-content li a {
   color: white;
-  padding: 12px 16px;
+  padding: 14px 24px;
   text-decoration: none;
   display: block;
   text-align: left;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  white-space: nowrap; /* Ensure text doesn't wrap */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis if still too long */
 }
 
 .dropdown-content li a:hover {
-  background-color: grey;
+  background-color: #3b061a; /* Brand color */
+  border-left: 3px solid white;
+  padding-left: 17px; /* Slight indent on hover */
 }
 
+/* Add a subtle animation when dropdown appears */
 .dropdown:hover .dropdown-content {
   display: block;
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .contact-info a {
@@ -643,6 +683,11 @@ footer div {
 
   .nav-bar li a {
     font-size: 20px;
+  }
+  
+  .dropdown-content li a {
+    padding: 12px 20px;
+    font-size: 18px; /* Slightly larger for touch targets */
   }
 
   .hero-content {
