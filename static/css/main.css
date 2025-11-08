@@ -105,6 +105,7 @@ header .nav-bar {
   width: max-content; /* Allow it to size based on content */
   max-width: 350px; /* Set a reasonable max */
   top: 100%;
+  padding-top: 6px;
   left: 0;
   border-radius: 0 0 5px 5px;
   padding: 10px 0;
@@ -143,6 +144,10 @@ header .nav-bar {
 .dropdown:hover .dropdown-content {
   display: block;
   animation: fadeIn 0.2s ease-in;
+}
+
+.dropdown-content.active {
+    display: block;
 }
 
 @keyframes fadeIn {
@@ -683,6 +688,12 @@ footer div {
 
   .nav-bar li a {
     font-size: 20px;
+  }
+
+  .nav-bar .dropdown .dropdown-content {
+    top: 100% !important;           /* anchor to bottom of trigger */
+    transform: translateY(18px);     /* move it down a bit */
+    padding-top: 24px !important;    /* empty space above first link */
   }
   
   .dropdown-content li a {
