@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block meta %}
+    <meta name="description" content="Permian Alliance offers powerful indirect-fired industrial heaters for oilfield operations in the Permian Basin. Rent Blaze 200 and 400 Turbo heaters to prevent freeze-ups, maintain chemical flow, and support drilling, frac, and production operations in extreme weather conditions.">
+    <meta name="Author" content="PathSix Web Design LLC">
+{% endblock %}
+
+{% block title %}Permian Alliance Industrial Heater Rentals{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="products">
+    <div class="trailer-page">
+        <h1>Industrial Heater Rentals</h1>
+        <h2>Blaze 200 D/G Turbo & Blaze 400 D/G Turbo</h2>
+        
+        <section class="about">
+            <img
+            src="{{ url_for('static', filename='images/forty-k-heater.jpg') }}"
+            alt="Blaze 400 D/G Turbo indirect-fired heater"
+            />
+            <div>
+                <h2>Heavy-Duty Heating for Oilfield Operations</h2>
+                <p>
+                    Cold weather slows production, locks up equipment, and brings entire 
+                    operations to a halt. Permian Alliance provides heavy-duty indirect-fired 
+                    heaters built specifically for the oilfield. Our Blaze 200 and Blaze 400 
+                    Turbo units deliver clean, dependable heat for drilling sites, frac crews, 
+                    production facilities, and winter operations across the Permian Basin.
+                </p>
+                <p>
+                    These heaters keep your fluids moving, your equipment online, and your 
+                    people working safely — no matter how cold it gets.
+                </p>
+            </div>
+        </section>
+
+        <section class="about">
+            <img
+            src="{{ url_for('static', filename='images/20-k-heater.jpg') }}"
+            alt="Blaze 200 D/G Turbo indirect-fired heater"
+            />
+            <div>
+                <h2>Specifications</h2>
+                <ul>
+                    <li><strong>Blaze 200 D/G Turbo:</strong> 200,000 BTU/hr heating capacity</li>
+                    <li><strong>Blaze 400 D/G Turbo:</strong> 400,000 BTU/hr heating capacity</li>
+                    <li>Indirect-fired design for clean, safe heat</li>
+                    <li>Portable units</li>
+                    <li>Built for extreme oilfield conditions</li>
+                    <li>24/7 service and support available</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="features">
+            <div>
+                <h2>Applications</h2>
+                <h3>Thaw Frozen Equipment</h3>
+                <p>
+                    Winter freeze-ups hit fast. Crews rely on these heaters to quickly thaw 
+                    valves and manifolds, flowlines and hoses, pumps and fittings, and rig 
+                    equipment. Targeted heat with tents or ducting gets systems back online quickly.
+                </p>
+
+                <h3>Support Drilling & Frac Operations</h3>
+                <p>
+                    On active wells and frac pads, these heaters prevent hydration units from 
+                    freezing, blenders and pump trucks from icing, sand equipment lock-ups, and 
+                    iron and manifolds from stiffening in cold weather. When every stage counts, 
+                    reliable heat keeps the job moving.
+                </p>
+
+                <h3>Production Support & Flow Assurance</h3>
+                <p>
+                    Cold temperatures create hydrates, reduce flow rates, and cause freeze-offs. 
+                    These heaters help protect wellheads, separators and treaters, flowback tanks, 
+                    and water transfer lines. Consistent heat prevents shutdowns and production loss.
+                </p>
+
+                <h3>Worker Safety & Temporary Facilities</h3>
+                <p>
+                    Indirect heat is clean, safe, and ideal for crew trailers, safety tents, 
+                    control rooms, on-site offices, and break areas. Maintains safe working 
+                    conditions during extreme weather events.
+                </p>
+
+                <h3>Construction & Maintenance</h3>
+                <p>
+                    These heaters also support pad construction and maintenance tasks including 
+                    concrete curing, coating and paint work, adhesive and epoxy setup, and 
+                    equipment repairs under heat tents. They provide stable temperatures when 
+                    winter would otherwise shut projects down.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>
+                For more information or to rent an industrial heater for your operation,
+                please contact us:
+            </p>
+            <ul>
+                <li>Phone: (432) 250-4778</li>
+                <li>
+                    Email: <a href="mailto:hryan@permianalliance.com">Permian Alliance</a>
+                </li>
+            </ul>
+            <p>Or go to our contact page:</p>
+            <div class="contact"><a href="{{ url_for('contact') }}">CONTACT US</a></div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/imageAppear.js') }}"></script>
+{% endblock %}

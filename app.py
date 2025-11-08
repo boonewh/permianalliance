@@ -48,6 +48,14 @@ def outfitting():
 def pressure():
     return render_template('pressure.html')
 
+@app.route('/heaters')
+def heaters():
+    return render_template('heaters.html')
+
+@app.route('/steamer')
+def steamer():
+    return render_template('steamer.html')
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = ContactForm()

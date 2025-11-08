@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block meta %}
+    <meta name="description" content="Permian Alliance provides on-site industrial steam cleaning with a trailer-mounted 3500 PSI hot water unit. Professional two-man crew service for frac tanks, drilling rigs, heavy equipment, and oilfield machinery throughout the Permian Basin.">
+    <meta name="Author" content="PathSix Web Design LLC">
+{% endblock %}
+
+{% block title %}Permian Alliance Steam Cleaning Services{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="products">
+    <div class="trailer-page">
+        <h1>Industrial Steam Cleaning Services</h1>
+        <section class="about">
+            <img
+            src="{{ url_for('static', filename='images/steamer.jpg') }}"
+            alt="Permian Alliance trailer-mounted 3500 PSI steam cleaning unit"
+            />
+            <div>
+            <h2>Professional On-Site Steam Cleaning</h2>
+            <p>
+                Permian Alliance provides industrial steam cleaning with a trailer-mounted 
+                3500 PSI hot-water unit, operated by a trained two-man crew. Our high-pressure, 
+                high-temperature steamer removes drilling mud, crude oil, scale, grease, and 
+                chemical residues that standard washing can't touch—keeping your equipment 
+                clean, safe, and compliant without pulling it off location.
+            </p>
+            </div>
+        </section>
+        <section id="features">
+            <div>
+            <h2>Service Features</h2>
+            <ul>
+                <li>3500 PSI industrial cleaning pressure</li>
+                <li>High-temperature hot-water steam capability</li>
+                <li>Fully staffed with trained two-man crew</li>
+                <li>Complete service—not just equipment rental</li>
+                <li>Large water tank for extended run time</li>
+                <li>Transport to and from location</li>
+                <li>Built for field conditions and remote locations</li>
+            </ul>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>
+                For more information or to schedule steam cleaning services,
+                please contact us:
+            </p>
+            <ul>
+                <li>Phone: (432) 250-4778</li>
+                <li>
+                    Email: <a href="mailto:hryan@permianalliance.com">Permian Alliance</a>
+                </li>
+            </ul>
+            <p>Or go to our contact page:</p>
+            <div class="contact"><a href="{{ url_for('contact') }}">CONTACT US</a></div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/imageAppear.js') }}"></script>
+{% endblock %}

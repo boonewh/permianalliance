@@ -203,6 +203,9 @@ main {
   justify-content: center;
   align-items: stretch;
   margin: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .trailers1,
@@ -211,11 +214,12 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
-  width: 30%;
+  margin: 15px;
+  width: calc(25% - 30px); /* 4 columns with gaps */
+  min-width: 250px;
   border: 3px solid black;
   box-sizing: border-box;
-  flex-grow: 1;
+  flex-grow: 0;
   border-radius: 10px;
   background: #3b061a;
   color: white;
@@ -241,7 +245,8 @@ main {
 .trailers2 img,
 .trailers3 img {
   width: 100%;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
   border-bottom: 1px solid black;
   box-sizing: border-box;
   border-top-right-radius: 10px;
@@ -249,7 +254,7 @@ main {
 }
 
 .trailer-info {
-  padding: 20px;
+  padding: 15px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -257,14 +262,20 @@ main {
 }
 
 .trailer-info h2 {
-  font-size: 1.5em;
+  font-size: 1.3em;
   text-align: center;
+  margin-top: 0;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .trailer-info p {
-  font-size: 1.1em;
-  margin: 20px 0;
+  font-size: 0.95em;
+  margin: 15px 0;
   text-align: center;
+  line-height: 1.4;
 }
 
 .learn-more {
@@ -275,9 +286,10 @@ main {
   border-radius: 5px;
   font-size: 14px;
   border: 1px solid white;
-  width: 30%;
-  margin: auto;
+  width: 50%;
+  margin: 10px auto 0;
   text-align: center;
+  display: block;
 }
 
 .learn-more:hover {
@@ -352,13 +364,13 @@ main {
 }
 
 .about h2 {
-  text-align: center;
   font-size: 1.6em;
-  margin-top: 3em;
+  margin: 3em auto;
+  margin-bottom: 0;
+  width: 70%;
 }
 
 .about p {
-  text-align: center;
   margin: 1em auto;
   width: 70%;
   font-size: 1.3em;
@@ -395,6 +407,18 @@ main {
   flex: 1;
 }
 
+.about ul {
+  padding: 0;
+  margin: 1em auto;
+  width: 70%;
+}
+
+.about ul li {
+  font-size: 1.3em;
+  margin: 15px 0;
+  line-height: 1.2em;
+}
+
 #contact {
   margin: auto;
   width: 40%;
@@ -417,22 +441,7 @@ main {
   font-size: 1.6em;
   margin-top: 2em;
 }
-/*
-.image-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
 
-.image-container img {
-  max-width: 100%;
-  margin: 1em;
-  border: 1px solid #ddd;
-  padding: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: fit-content;
-}
-*/
 .contact {
   background-color: #3b061a;
   color: white;
@@ -601,6 +610,24 @@ footer div {
   font-size: 0.8em;
 }
 
+/* Tablet and smaller desktop breakpoint */
+@media (max-width: 1200px) {
+  .trailers1,
+  .trailers2,
+  .trailers3 {
+    width: calc(33.333% - 30px); /* 3 columns on medium screens */
+  }
+}
+
+/* Tablet breakpoint */
+@media (max-width: 900px) {
+  .trailers1,
+  .trailers2,
+  .trailers3 {
+    width: calc(50% - 30px); /* 2 columns on tablets */
+  }
+}
+
 @media (max-width: 768px) {
   .logo {
     width: 40%;
@@ -662,6 +689,13 @@ footer div {
   .trailers2,
   .trailers3 {
     width: 90%;
+    margin: 15px auto;
+  }
+  
+  .trailers1 img,
+  .trailers2 img,
+  .trailers3 img {
+    height: auto;
   }
 
   #contact {
@@ -763,10 +797,11 @@ footer div {
 
   .trailer-info h2 {
     font-size: 1.2em;
+    min-height: auto;
   }
 
   .trailer-info p {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 
   .about_main h2 {
