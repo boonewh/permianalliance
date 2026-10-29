@@ -1,10 +1,19 @@
 import os
+import certifi
 from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory
 from forms import ContactForm
-from flask_mail import Mail, Message
+from flask_mail import Message
+from secure_mail import VerifiedMail
+
+os.environ.setdefault('SSL_CERT_FILE', certifi.where())
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY', 'default_secret')
+app.secret_key = os.environ.get('SECRET_KEY')
+if not app.secret_key or app.secret_key == 'default_secret':
+    raise RuntimeError('Set SECRET_KEY to a private random value before starting Permian Alliance.')
+app.config['MAX_CONTENT_LENGTH'] = 64 * 1024
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+app.config['SESSION_COOKIE_SECURE'] = os.environ.get('VERCEL') == '1'
 
 # Configure Flask-Mail
 app.config['MAIL_SERVER'] = 'mail.gandi.net'
@@ -18,7 +27,7 @@ app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 app.config['RECAPTCHA_PUBLIC_KEY'] = os.environ.get('RECAPTCHA_PUBLIC_KEY')
 app.config['RECAPTCHA_PRIVATE_KEY'] = os.environ.get('RECAPTCHA_PRIVATE_KEY')
 
-mail = Mail(app)
+mail = VerifiedMail(app)
 
 @app.route('/')
 def index():
@@ -84,8 +93,7 @@ def contact():
         except Exception as e:
             app.logger.error("Error sending email: %s", e)  # Log any email errors
             flash("An error occurred while sending your message. Please try again later.", "danger")
-            flash(f"Error: {str(e)}", "danger")
-    else:
+    elif request.method == 'POST':
         app.logger.warning("Form validation failed: %s", form.errors)  # Log validation errors
         if form.recaptcha.errors:
             app.logger.warning("reCAPTCHA validation errors: %s", form.recaptcha.errors)  # Log reCAPTCHA-specific errors
@@ -106,4 +114,4 @@ def redirect_to_contact():
     return redirect(url_for('contact'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
